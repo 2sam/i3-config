@@ -16,6 +16,7 @@ exec_always ~/.i3/lock-start.sh
 exec_always --no-startup-id xrandr --output LVDS1 --primary
 exec_always --no-startup-id xset dpms 300
 exec terminator -l standard -r TerminatorStack
+exec --no-startup-id nm-applet
 exec --no-startup-id owncloud
 exec --no-startup-id gajim
 
