@@ -69,6 +69,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="^mpv$"] floating enable
 for_window [class="^MPlayer$"] floating enable
+for_window [class="^Nautilus$"] floating enable
 
 # custom bindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix increase 5
