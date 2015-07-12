@@ -5,6 +5,7 @@ font pango:Fira Mono 9
 # misc
 set $mod Mod4
 floating_minimum_size 100 x 100
+floating_maximum_size 1024 x 576
 popup_during_fullscreen leave_fullscreen
 #workspace_auto_back_and_forth yes
 force_display_urgency_hint 1500 ms
@@ -66,6 +67,8 @@ for_window [class="^Pavucontrol$"] move scratchpad
 for_window [title="references"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="^mpv$"] floating enable
+for_window [class="^MPlayer$"] floating enable
 
 # custom bindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix increase 5
