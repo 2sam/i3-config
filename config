@@ -85,6 +85,7 @@ bindsym XF86ScreenSaver exec i3lock -i ~/docs/lock.png -tfd & sleep 0.5s && xset
 bindsym $mod+l exec i3lock -i ~/docs/lock.png -tfd & sleep 0.5s && xset dpms force off
 
 bindsym $mod+x [urgent=latest] focus
+bindsym $mod+Print exec gnome-screenshot -a
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
