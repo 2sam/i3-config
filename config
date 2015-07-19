@@ -11,12 +11,14 @@ popup_during_fullscreen leave_fullscreen
 force_display_urgency_hint 1500 ms
 
 # startup
+# pkg: feh xss-lock terminator network-manager-applet pasystray-git owncloud gajim
 exec_always --no-startup-id feh --bg-fill ~/docs/lock.png
 exec_always ~/.i3/lock-start.sh
 exec_always --no-startup-id xrandr --output LVDS1 --primary
 exec_always --no-startup-id xset dpms 300
 exec terminator -l standard -r TerminatorStack
 exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 exec --no-startup-id owncloud
 exec --no-startup-id gajim
 
@@ -74,6 +76,7 @@ for_window [class="^Nautilus$"] floating enable
 for_window [class="^Gnome-calendar$"] floating enable
 
 # custom bindings
+# pkg: ponymix pavucontrol gnome-screenshot
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix increase 5
 bindsym XF86AudioLowerVolume exec --no-startup-id ponymix decrease 5
 bindsym XF86AudioMute exec --no-startup-id ponymix toggle
