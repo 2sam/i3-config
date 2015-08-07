@@ -80,7 +80,7 @@ for_window [class="^Gnome-calendar$"] floating enable
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix increase 5
 bindsym XF86AudioLowerVolume exec --no-startup-id ponymix decrease 5
 bindsym XF86AudioMute exec --no-startup-id ponymix toggle
-bindsym XF86AudioMicMute exec --no-startup-id ~/.i3/pavu-toggle.sh
+bindsym $mod+XF86AudioMute exec --no-startup-id ~/.i3/pavu-toggle.sh
 
 bindsym XF86Launch1 exec xset dpms force off
 bindsym XF86Sleep exec systemctl suspend -i
