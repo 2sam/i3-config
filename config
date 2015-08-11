@@ -45,7 +45,7 @@ workspace_layout tabbed
 assign [window_role="^TerminatorStack$"] $ws1
 
 assign [class="^Gajim$"] $ws2
-assign [class="^telegram$"] $ws2
+assign [class="^Telegram$"] $ws2
 assign [class="^Thunderbird$"] $ws2
 assign [class="^Evolution$"] $ws2
 
@@ -63,15 +63,15 @@ assign [class="^Inkscape$"] $ws5
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Gajim$"] floating enable
 for_window [class="^Arandr$"] floating enable
-for_window [class="^telegram$"] floating enable
+for_window [class="^Telegram$"] floating enable
 for_window [class="^Thunderbird$"] floating enable
 for_window [class="^Evolution$"] floating enable
 #for_window [class="^Pavucontrol$"] move scratchpad
 for_window [title="references"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="^mpv$"] floating enable
-for_window [class="^MPlayer$"] floating enable
+#for_window [class="^mpv$"] floating enable
+#for_window [class="^MPlayer$"] floating enable
 for_window [class="^Nautilus$"] floating enable
 for_window [class="^Gnome-calendar$"] floating enable
 
