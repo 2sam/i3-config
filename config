@@ -22,6 +22,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id pasystray
 exec --no-startup-id owncloud
 exec --no-startup-id gajim
+exec --no-startup-id thunderbird
 
 # workspaces
 set $ws1 "1 $ "
@@ -75,6 +76,7 @@ for_window [window_role="task_dialog"] floating enable
 #for_window [class="^MPlayer$"] floating enable
 for_window [class="^Nautilus$"] floating enable
 for_window [class="^Gnome-calendar$"] floating enable
+for_window [class="^blueman-"] floating enable
 
 # custom bindings
 # pkg: ponymix pavucontrol gnome-screenshot
