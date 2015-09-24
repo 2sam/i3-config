@@ -76,7 +76,7 @@ for_window [window_role="task_dialog"] floating enable
 #for_window [class="^MPlayer$"] floating enable
 for_window [class="^Nautilus$"] floating enable
 for_window [class="^Gnome-calendar$"] floating enable
-for_window [class="^blueman-"] floating enable
+for_window [class="^Blueman"] floating enable
 
 # custom bindings
 # pkg: ponymix pavucontrol gnome-screenshot
