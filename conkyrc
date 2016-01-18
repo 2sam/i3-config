@@ -1,0 +1,69 @@
+### Conky configuration file
+
+out_to_x no
+own_window no
+out_to_console yes
+double_buffer no
+background no
+update_interval 1.0
+total_run_times 0
+short_units no
+if_up_strictness address
+use_spacer right
+#override_utf8_locale yes
+cpu_avg_samples 8
+pad_percents 2
+use_xft yes
+#xftfont Neris Thin
+TEXT
+
+[
+    {
+        "full_text": "${exec amixer get Master -M | grep -oE -m1 '[[:digit:]]*%'}"
+    },
+    {
+        "full_text": "${if_up wlp3s0}${wireless_bitrate wlp3s0} ${wireless_link_qual_perc wlp3s0} [${wireless_essid}] ${addr wlp3s0}${endif}"
+    },
+    {
+        "full_text": "${if_up wlp3s0}↓${downspeed wlp3s0}${endif}${if_up wlp3s0} ↑${upspeed wlp3s0}${endif}"
+    },
+    {
+        "full_text": "${if_up enp0s25}↓${downspeed enp0s25}${endif}${if_up enp0s25} ↑${upspeed enp0s25}${endif}"
+    },
+    {
+        "full_text": "inet ${if_gw}${execi 25 curl ipv4.ipogre.com}${endif}"
+    },
+    {
+        "full_text": "tor ${if_gw}${execi 25 torify curl ipv4.ipogre.com}${endif}"
+    },
+    {
+        "full_text": "${if_gw}${execi 30 curl ipv6.ipogre.com}${endif}"
+    },
+    {
+        "full_text": "${if_up enp0s25}eth ${addr enp0s25}${endif}"
+    }, 
+    {
+        "full_text": "/ ${fs_free /}"
+    },
+    {
+        "full_text": "/home ${fs_free /home}"
+    },
+    {
+        "full_text": "${exec sensors | grep 'Core 0:' | cut -c18-19 | sed '/^$/d' }° ${exec sensors | grep 'Core 1:' | cut -c18-19 | sed '/^$/d' }°"
+    },
+    {
+        "full_text": "${loadavg}"
+    },
+    {
+        "full_text": "${battery_short BAT0}"
+    },
+    {
+        "full_text": "${battery_short BAT1}"
+    },
+    {
+        "full_text": " ${time %H:%M} "
+    }
+],
+
+
+
