@@ -5,5 +5,6 @@ then
   echo "xss-lock is already running"
 else
   echo "starting xss-lock"
+  #xss-lock -- ~/.lock &
   xss-lock -- i3lock -i ~/docs/lock.png -tfd &
 fi
