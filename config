@@ -6,7 +6,7 @@ font pango:Hack 8.5
 set $mod Mod4
 floating_minimum_size 100 x 100
 floating_maximum_size 1200 x 750
-popup_during_fullscreen leave_fullscreen
+#popup_during_fullscreen leave_fullscreen
 #workspace_auto_back_and_forth yes
 force_display_urgency_hint 1500 ms
 
@@ -18,7 +18,7 @@ exec_always --no-startup-id feh --bg-fill ~/docs/lock.png
 #exec xscreensaver
 exec ~/.i3/lock-start.sh
 exec_always --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id xset dpms 300
+exec --no-startup-id xset dpms 600
 exec terminator -l standard -r TerminatorStack
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -27,7 +27,7 @@ exec --no-startup-id owncloud
 #exec --no-startup-id gajim
 exec --no-startup-id thunderbird
 exec --no-startup-id redshift-gtk
-exec epiphany "https://grassenberg.linkpc.net/oc/index.php/apps/calendar"
+#exec epiphany "https://grassenberg.linkpc.net/oc/index.php/apps/calendar"
 
 # workspaces
 set $ws1 "1 $ "
