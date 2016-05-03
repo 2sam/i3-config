@@ -13,13 +13,13 @@ force_display_urgency_hint 1500 ms
 # startup
 # pkg: feh xss-lock terminator network-manager-applet pasystray-git owncloud gajim
 exec ~/.screenlayout/lvds.sh
-exec_always --no-startup-id feh --bg-fill ~/docs/lock.png
+exec_always --no-startup-id feh --bg-fill ~/.config/the-catcher-in-the-rye.jpg
 #exec light-locker
 #exec xscreensaver
 exec ~/.i3/lock-start.sh
 exec_always --no-startup-id xrandr --output LVDS1 --primary
 exec --no-startup-id xset dpms 600
-exec terminator -l standard -r TerminatorStack
+#exec terminator -l standard -r TerminatorStack
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 #exec --no-startup-id pasystray
@@ -130,7 +130,7 @@ bindsym $mod+Shift+F12 exec ~/.screenlayout/bettscreen_only.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym F2 exec terminator
+bindsym F2 exec urxvt
 
 # kill focused window
 #bindsym $mod+q kill
@@ -210,6 +210,8 @@ bindsym $mod+Ctrl+8 workspace $ws18
 bindsym $mod+Ctrl+9 workspace $ws19
 bindsym $mod+Ctrl+0 workspace $ws20
 
+bindsym $mod+Next workspace next_on_output
+bindsym $mod+Prior workspace prev_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
