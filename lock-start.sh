@@ -1,10 +1,30 @@
-#!/bin/sh
+#!/bin/zsh
 
-if ps ax|grep -v grep|grep xss-lock > /dev/null
-then
-  echo "xss-lock is already running"
-else
-  echo "starting xss-lock"
-  #xss-lock -- ~/.lock &
+start() {
+  killall xss-lock
+  #echo "starting xss-lock"
   xss-lock -- i3lock -i ~/docs/lock.png -tfd &
-fi
+  watch $!
+}
+
+watch() {
+  PID=$1
+
+  while ps $PID; do
+    #echo "watching wifi"
+    if iwconfig wlp3s0|grep 'Grassenberg e.V. OBEN'; then 
+      kill $PID
+      #echo "killed xss-lock"
+    else sleep 3s; fi
+  done
+
+  while iwconfig wlp3s0|grep OBEN; do 
+    #echo "watching wifi"  
+    sleep 3s; 
+  done
+
+  #echo "starting xss-lock"
+  start
+}
+
+start

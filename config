@@ -13,21 +13,28 @@ force_display_urgency_hint 1500 ms
 # startup
 # pkg: feh xss-lock terminator network-manager-applet pasystray-git owncloud gajim
 exec ~/.screenlayout/lvds.sh
-exec_always --no-startup-id feh --bg-fill ~/.config/the-catcher-in-the-rye.jpg
+#exec_always --no-startup-id feh --bg-fill ~/.config/the-catcher-in-the-rye.jpg
+#exec_always --no-startup-id feh --bg-fill ~/.config/nebula.jpg
+#exec_always --no-startup-id feh --bg-fill ~/.config/nebula.jpg
+#exec_always --no-startup-id feh --bg-fill ~/downloads/mimas.jpg
+#exec_always --no-startup-id feh --bg-fill ~/downloads/jupiter3.jpeg
+exec_always --no-startup-id feh --bg-fill ~/.config/regenwald_dyoni.JPG
+
 #exec light-locker
 #exec xscreensaver
 exec ~/.i3/lock-start.sh
 exec_always --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id xset dpms 600
+exec --no-startup-id xset dpms 300
 #exec terminator -l standard -r TerminatorStack
 exec --no-startup-id nm-applet
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 #exec --no-startup-id pasystray
 exec --no-startup-id owncloud
 #exec --no-startup-id gajim
-exec --no-startup-id thunderbird
+#exec --no-startup-id thunderbird
 exec --no-startup-id redshift-gtk
 #exec epiphany "https://grassenberg.linkpc.net/oc/index.php/apps/calendar"
+exec tomboy
 
 # workspaces
 set $ws1 "1 $ "
@@ -82,17 +89,19 @@ assign [class="^Tor Browser$"] $ws3
 assign [class="^(e|E)piphany$"] $ws2
 for_window [class="^(e|E)piphany$"] floating enable
 
-assign [class="^libreoffice"] $ws4
-assign [class="^Atom$"] $ws4
+for_window [class="Tomboy"] floating enabe
 
-assign [class="^Gimp$"] $ws5
-assign [class="^Inkscape$"] $ws5
+assign [class="^libreoffice"] $ws4
+#assign [class="^Atom$"] $ws4
+
+#assign [class="^Gimp$"] $ws5
+#assign [class="^Inkscape$"] $ws5
 
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Arandr$"] floating enable
 for_window [class="^Evolution$"] floating enable
 #for_window [class="^Pavucontrol$"] move scratchpad
-for_window [title="references"] floating enable
+#for_window [title="references"] floating enable
 for_window [class="Firefox"] floating disable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -112,10 +121,11 @@ bindsym XF86AudioMute exec --no-startup-id ponymix toggle
 bindsym $mod+XF86AudioMute exec --no-startup-id ~/.i3/pavu-toggle.sh
 
 bindsym XF86Launch1 exec xset dpms force off
+bindsym XF86Calculator exec xset dpms force off
 bindsym XF86Sleep exec systemctl suspend -i
 bindsym XF86ScreenSaver exec xset dpms force off
 #i3lock -i ~/docs/lock.png -tfd & sleep 0.5s && xset dpms force off
-bindsym $mod+l exec xset dpms force off
+bindsym $mod+l exec i3lock -i ~/docs/lock.png -tfd #xset dpms force off
 #i3lock -i ~/docs/lock.png -tfd & sleep 0.5s && xset dpms force off
 
 bindsym $mod+x [urgent=latest] focus
@@ -130,7 +140,7 @@ bindsym $mod+Shift+F12 exec ~/.screenlayout/bettscreen_only.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym F2 exec urxvt
+bindsym F2 exec terminator
 
 # kill focused window
 #bindsym $mod+q kill
